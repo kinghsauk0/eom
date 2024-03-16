@@ -9,7 +9,7 @@ function Header() {
       <div className="w-screen  bg-black flex justify-center items-center p-[20px]">
          <p className="text-wrap text-white text-[15px]">summer sale All Swim And Free Express Delivery -OFF 50%!</p>
       </div>
-      <div className="flex flex-row justify-around items-center p-[50px] flex-wrap gap-[40px]">
+      <div className="flex flex-row justify-around items-center p-[30px] flex-wrap gap-[40px]">
           <div>
             <h1 className="text-wrap text-black text-[25px] font-bold">Exclusive</h1>
           </div>

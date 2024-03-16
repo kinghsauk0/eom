@@ -14,20 +14,36 @@ function Header() {
             <h1 className="text-wrap text-black text-[25px] font-bold">Exclusive</h1>
           </div>
           <ul className="flex flex-row flex-wrap">
-            <li className="mx-[20px]">
-              <NavLink to="/">Home</NavLink>
+            <li className="mx-[20px">
+              <NavLink to="/"
+              className={({isActive}) =>
+              isActive ? "underline " : null
+            }
+              >Home</NavLink>
             </li>
 
             <li className="mx-[20px]">
-            <NavLink to="/contart">Contart</NavLink>
+            <NavLink to="/contart"
+            className={({isActive}) =>
+            isActive ? "underline" : null
+          }
+            >Contart</NavLink>
             </li>
 
             <li className="mx-[20px]">
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about"
+            className={({isActive}) =>
+            isActive ? "underline " : null
+          }
+            >About</NavLink>
             </li>
 
             <li className="mx-[20px]">
-            <NavLink to="/singup">Singup</NavLink>
+            <NavLink to="/singup"
+            className={({isActive}) =>
+            isActive ? "underline " : null
+          }
+            >Singup</NavLink>
             </li>
           </ul>
           <div className="flex flex-row flex-wrap justify-center items-center bg-[#7D8184]">

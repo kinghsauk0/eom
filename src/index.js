@@ -6,9 +6,15 @@ import Singup from './pages/singup/Singup';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter,createRoutesFromElements,RouterProvider , Route} from "react-router-dom"
 import Login from './pages/login/Login';
-import Home from './pages/home/Home';
+
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
+import Woman from './components/woman/Woman';
+import Man from './components/man/Man';
+import Kid from './components/kid/Kid';
+import Electronics from './components/electronics/Electronics';
+import Sports from './components/sports/Sports';
+import Home from './pages/home/Home';
 
 
 const router =createBrowserRouter(
@@ -17,6 +23,11 @@ const router =createBrowserRouter(
       <Route path='singup' element={<Singup/>}/>
       <Route path='login'  element={<Login/>}/>
       <Route path='' element={<Home/>}/>
+      <Route path='woman' element={<Woman/>}/>
+        <Route path='man' element={<Man/>}/>
+        <Route path='kid' element={<Kid/>}/>
+        <Route path='electronic' element={<Electronics/>}/>
+        <Route path='sports' element={<Sports/>}/>
       <Route path='contart' element={<Contact/>}/>
       <Route path='about' element={<About/>}/>
     </Route>

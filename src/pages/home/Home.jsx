@@ -5,9 +5,12 @@ import data from "../../assets/data.js"
 import allProduct from "../../assets/all_product.js"
 import new_collections from "../../assets/new_collections.js";
 import Product from "../../components/product/Product.jsx";
+//import { UseManuContext } from "../../context/ManuContex.js";
+//import User from "../../components/user/User.js";
 
 
 function Home() {
+ 
   return (
     <div className="flex w-auto h-auto flex-wrap flex-row gap-[50px] my-[80px] mx-[40px]">
         <SideBar />

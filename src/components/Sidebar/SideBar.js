@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function SideBar() {
   return (
     <>
-        <ul className="flex flex-wrap flex-col gap-[20px] justify-center shadow pr-[60px] pl-[10px]">
+        <ul className="flex flex-wrap flex-col gap-[20px] justify-center shadow-lg pr-[60px] pl-[10px]">
           <li className="hover:bg-black hover:text-white p-[5px]">
             <Link to="/woman">
             Woman's Fashion

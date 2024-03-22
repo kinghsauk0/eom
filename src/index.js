@@ -15,6 +15,7 @@ import Kid from './components/kid/Kid';
 import Electronics from './components/electronics/Electronics';
 import Sports from './components/sports/Sports';
 import Home from './pages/home/Home';
+import Dashboard from './components/dashboard/Dashboard';
 
 
 const router =createBrowserRouter(
@@ -23,6 +24,7 @@ const router =createBrowserRouter(
       <Route path='singup' element={<Singup/>}/>
       <Route path='login'  element={<Login/>}/>
       <Route path='' element={<Home/>}/>
+      <Route path='dashboard' element={<Dashboard/>}/>
       <Route path='woman' element={<Woman/>}/>
         <Route path='man' element={<Man/>}/>
         <Route path='kid' element={<Kid/>}/>

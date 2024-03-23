@@ -14,7 +14,7 @@ function Footer() {
 
           <li className="bg-white flex flex-row justify-center items-center">
             <input type="text" placeholder="Enter Your Email" className="bg-white text-black p-[5px] placeholder:text-black"/>
-            <img src={send} className="w-[15px] h-[15px] m-1"/>
+            <img src={send} className="w-[15px] h-[15px] m-1" alt="logo"/>
           </li>
         </ul>
         <ul className="flex-wrap flex flex-col gap-[20px] justify-center items-center">

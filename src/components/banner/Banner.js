@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { allbanner } from "../../assets/ALLbanner.js";
+
 import slideButton from "../../assets/arrowimg.png";
 import slideBackButton from "../../assets/back.png";
+import { useGetBannerQuery } from "../../feature/RTKbanner.js";
 
 function Banner() {
+  const{isError,isLoading,data} =useGetBannerQuery()
   const [slide, setSlide] = useState(1); // Correct syntax for initializing state
-  const lastindex = allbanner.length - 1; // Calculate the last index of allbanner array
+  const lastindex = data.data.length - 1; // Calculate the last index of allbanner array
 
+  console.log(lastindex)
+  const allbanner =data.data
+  console.log(allbanner)
   const handleSlide = () => {
     if (slide-1 === lastindex) {
       // Do nothing if slide is already at its minimum value
@@ -24,6 +29,25 @@ function Banner() {
     }
   };
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error occurred while fetching data</div>;
+  }
+
+  if (!Array.isArray(allbanner) || allbanner.length === 0) {
+    return (
+      <div className="flex flex-wrap flex-col w-[75%] h-auto justify-center items-center">
+        <h1 className="text-wrap font-bold text-black lg:text-[50px] text-[30px] lg:mt-[40px] mt-[120px] mb-[80px]">
+          Show Banners
+        </h1>
+        <h1>No data available</h1>
+      </div>
+    );
+  }
+
   return (
     <div className="w-[100%] lg:w-[75%] h-auto  flex flex-row flex-wrap justify-center items-center">
       {allbanner.map((item) => {
@@ -32,16 +56,11 @@ function Banner() {
             <div
               key={item.id}
               style={{
-                backgroundImage: `url(${item.img})`,
+                backgroundImage: `url(${item.banner})`,
                 backgroundSize: "cover",
               }}
               className="w-[75%] h-[300px] lg:h-[500px] flex-wrap"
             >
-              <div className="w-[100%] h-[25%] flex flex-wrap justify-center items-center p-[20px]">
-                <h1 className="text-black text-wrap text-[30px] font-bold">
-                  {item.dis}
-                </h1>
-              </div>
               <div className="w-[100%] h-[75%]  justify-around items-center flex">
                 <button onClick={handleSlideBackbutton}>
                   <img

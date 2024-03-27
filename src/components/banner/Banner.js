@@ -1,33 +1,11 @@
 import React, { useState } from "react";
-
 import slideButton from "../../assets/arrowimg.png";
 import slideBackButton from "../../assets/back.png";
 import { useGetBannerQuery } from "../../feature/RTKbanner.js";
 
 function Banner() {
-  const{isError,isLoading,data} =useGetBannerQuery()
-  const [slide, setSlide] = useState(1); // Correct syntax for initializing state
-  const lastindex = data.data.length - 1; // Calculate the last index of allbanner array
-
-  console.log(lastindex)
-  const allbanner =data.data
-  console.log(allbanner)
-  const handleSlide = () => {
-    if (slide-1 === lastindex) {
-      // Do nothing if slide is already at its minimum value
-    } else {
-      setSlide((s) => s + 1);
-    }
-      
-  };
-
-  const handleSlideBackbutton = () => {
-    if (slide === 1) {
-      // Do nothing if slide is already at its minimum value
-    } else {
-      setSlide((s) => s - 1);
-    }
-  };
+  const { isError, isLoading, data } = useGetBannerQuery();
+  const [slide, setSlide] = useState(0);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -36,6 +14,25 @@ function Banner() {
   if (isError) {
     return <div>Error occurred while fetching data</div>;
   }
+
+  const allbanner = data.data;
+  const lastindex = allbanner.length - 1;
+
+  const handleSlide = () => {
+    if (slide === lastindex) {
+      // Do nothing if slide is already at its maximum value
+    } else {
+      setSlide((s) => s + 1);
+    }
+  };
+
+  const handleSlideBackbutton = () => {
+    if (slide === 0) {
+      // Do nothing if slide is already at its minimum value
+    } else {
+      setSlide((s) => s - 1);
+    }
+  };
 
   if (!Array.isArray(allbanner) || allbanner.length === 0) {
     return (
@@ -50,11 +47,11 @@ function Banner() {
 
   return (
     <div className="w-[100%] lg:w-[75%] h-auto  flex flex-row flex-wrap justify-center items-center">
-      {allbanner.map((item) => {
-        if (item.id === slide) {
+      {allbanner.map((item, index) => {
+        if (index === slide) {
           return (
             <div
-              key={item.id}
+              key={item._id}
               style={{
                 backgroundImage: `url(${item.banner})`,
                 backgroundSize: "cover",
@@ -69,7 +66,6 @@ function Banner() {
                     alt="logo"
                   />
                 </button>
-                 
                 <button onClick={handleSlide}>
                   <img
                     src={slideButton}

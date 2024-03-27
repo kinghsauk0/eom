@@ -16,8 +16,10 @@ import Electronics from './components/electronics/Electronics';
 import Sports from './components/sports/Sports';
 import Home from './pages/home/Home';
 import Dashboard from './components/dashboard/Dashboard';
-import { ApiProvider } from '@reduxjs/toolkit/query/react';
-import { getBannerApi } from './feature/RTKbanner';
+
+import {Provider} from "react-redux"
+import { store } from './store/Store';
+
 
 const router =createBrowserRouter(
   createRoutesFromElements(
@@ -39,9 +41,9 @@ const router =createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ApiProvider api={getBannerApi}>
+    <Provider store={store}>
     <RouterProvider router={router}/>
-    </ApiProvider>
+    </Provider>
    
   </React.StrictMode>
 );

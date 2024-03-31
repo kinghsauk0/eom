@@ -3,7 +3,7 @@ import ShowBanner from "../Showbanner/ShowBanner";
 import {
   useGetBannerQuery,
   useUplodeBannerMutation,
-} from "../../feature/RTKbanner";
+} from "../../feature/Api.js";
 
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";

@@ -2,8 +2,8 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useGetBannerQuery } from "../../feature/RTKbanner";
-import { useDeleteBannerMutation } from "../../feature/RTKbanner";
+import { useGetBannerQuery } from "../../feature/Api.js";
+import { useDeleteBannerMutation } from "../../feature/Api.js";
 
 function ShowBanner() {
   const { isLoading, isError, data, refetch } = useGetBannerQuery();

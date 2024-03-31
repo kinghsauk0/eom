@@ -1,11 +1,11 @@
 import { configureStore  } from "@reduxjs/toolkit";
-import { getBannerApi } from "../feature/RTKbanner";
+import { Api } from "../feature/Api";
 
 
 export const store = configureStore({
   reducer: {
-    [getBannerApi.reducerPath]: getBannerApi.reducer,
+    [Api.reducerPath]: Api.reducer,
   },
   middleware: (getDefaultMiddleware) => 
-  getDefaultMiddleware().concat(getBannerApi.middleware),
+  getDefaultMiddleware().concat(Api.middleware),
 });

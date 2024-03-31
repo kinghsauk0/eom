@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import slideButton from "../../assets/arrowimg.png";
 import slideBackButton from "../../assets/back.png";
-import { useGetBannerQuery } from "../../feature/RTKbanner.js";
+import { useGetBannerQuery } from "../../feature/Api.js";
 
 function Banner() {
   const { isError, isLoading, data } = useGetBannerQuery();

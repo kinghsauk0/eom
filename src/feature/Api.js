@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const Api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://127.0.0.1:8040/api/v1",
+    baseUrl: "https://ecom-backend-psi.vercel.app",
   }),
 
   endpoints: (builder) => ({
